@@ -8,9 +8,6 @@
     android:orientation="vertical"
     tools:context=".Payment">
 
-
-
-
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -25,7 +22,6 @@
                     android:layout_height="150dp"
                     android:layout_gravity="center"
                     android:background="@drawable/roundedtop_shape" />
-
             </LinearLayout>
 
             <TextView
@@ -46,27 +42,26 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_marginTop="150dp">
-
-                <!--INPUT HERE-->
+                android:layout_marginTop="150dp"
+                android:padding="25dp">
 
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                     />
-                <TextView
+                    android:id="@+id/gambarHasil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="305dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/add"/>
+                <Button
+                    android:id="@+id/btnSubmit"
+                    android:layout_marginTop="50dp"
+                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Testing"/>
+                    android:text="SUBMIT"/>
 
             </LinearLayout>
         </RelativeLayout>
-
-
-
-
-
-
 </LinearLayout>

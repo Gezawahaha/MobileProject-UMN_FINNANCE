@@ -51,12 +51,6 @@ public class Calender extends AppCompatActivity {
         pdfView.fromAsset("calenderaka.pdf").load();
         //new RetrievePDFStream().execute("https://www.umn.ac.id/wp-content/uploads/2015/07/Calendar-Akademik-2019_2020_compressed.pdf");
 
-
-
-
-
-
-
         BroadcastReceiver receiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -84,11 +78,6 @@ public class Calender extends AppCompatActivity {
         registerReceiver(receiver,new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
     }
-
-
-
-
-
 
     public void downloadpdf(View v)
     {
