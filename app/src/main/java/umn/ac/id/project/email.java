@@ -12,6 +12,8 @@ public class email extends AppCompatActivity {
         setContentView(R.layout.activity_email);
     }
 
+
+
     @Override
     public void finish() {
         super.finish();

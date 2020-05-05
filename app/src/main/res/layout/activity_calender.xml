@@ -9,7 +9,8 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -48,14 +49,25 @@
 
             <!--INPUT HERE-->
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Testing"/>
+            <Button
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+
+                android:id="@+id/download"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/shape_rounded"
+                android:text="Download"
+                android:fontFamily="@font/pompadour"
+                android:textSize="16dp"
+                android:onClick="downloadpdf"/>
+
+            <com.github.barteksc.pdfviewer.PDFView
+                android:layout_width="match_parent"
+                android:layout_height="430dp"
+                android:id="@+id/pdfView"/>
 
         </LinearLayout>
     </RelativeLayout>
