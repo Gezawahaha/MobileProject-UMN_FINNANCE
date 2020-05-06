@@ -8,7 +8,8 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -47,23 +48,36 @@
             android:layout_marginLeft="250dp"
             android:paddingTop="10dp"
             android:src="@drawable/atm" />
+        <ImageView
+            android:src="@drawable/paymentmethod"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="600px"
+            android:layout_marginTop="140dp"
+            />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="150dp">
+            android:layout_marginTop="350dp">
 
             <!--INPUT HERE-->
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Testing"/>
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </Spinner>
+
+            <com.github.barteksc.pdfviewer.PDFView
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="682px"
+                android:id="@+id/pdfView"/>
+
 
         </LinearLayout>
     </RelativeLayout>

@@ -24,7 +24,7 @@ import java.io.File;
 public class Payment extends AppCompatActivity {
 
     ImageView imgShow;
-    Button submit;
+    Button pilih;
     private Uri imageUrl;
     private static int CAMERA = 1;
     private static int GALLERY = 2;
@@ -45,7 +45,7 @@ public class Payment extends AppCompatActivity {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     File file = new File(Environment.getExternalStorageDirectory(),
                             "image_picker/img_" +
-                            String.valueOf(System.currentTimeMillis())+ ".jpg");
+                                    String.valueOf(System.currentTimeMillis())+ ".jpg");
                     imageUrl = Uri.fromFile(file);
 
                     try{
@@ -55,7 +55,7 @@ public class Payment extends AppCompatActivity {
                     }catch (Exception e){
                         e.printStackTrace();
                     }
-                    /*dialog.cancel();*/
+                    dialog.cancel();
                 }else if(pilihan == 1){
                     Intent intent = new Intent();
                     intent.setType("image/*");
@@ -73,15 +73,6 @@ public class Payment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dialog.show();
-            }
-        });
-
-        submit = findViewById(R.id.btnSubmit);
-
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
             }
         });
     }

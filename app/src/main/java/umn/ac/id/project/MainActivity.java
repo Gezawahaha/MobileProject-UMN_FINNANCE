@@ -131,6 +131,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void Elearning(View view) {
+        Intent intent = new Intent(this, Elearning.class);
+        startActivity(intent);
+    }
+
     public void sendOnChannel1(View v) {
         String title = ("Jatuh Tempo");
         String message = ("Blablalbalbal");
