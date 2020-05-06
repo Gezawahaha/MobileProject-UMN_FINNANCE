@@ -1,8 +1,9 @@
 package umn.ac.id.project;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,6 +13,7 @@ import com.github.barteksc.pdfviewer.PDFView;
 
 public class Paymentmethod extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     PDFView pdfView;
+
 
 
 
@@ -41,10 +43,11 @@ public class Paymentmethod extends AppCompatActivity implements AdapterView.OnIt
         //overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
+
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         if (i==0 ){
-            pdfView.clearFocus();
+
         }else if (i == 1){
             pdfView.fromAsset("cimb.pdf").load();
         }else if (i== 2){
@@ -53,6 +56,7 @@ public class Paymentmethod extends AppCompatActivity implements AdapterView.OnIt
 
 
     }
+
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {

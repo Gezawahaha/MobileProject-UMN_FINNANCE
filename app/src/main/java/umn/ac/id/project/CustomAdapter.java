@@ -1,5 +1,6 @@
 package umn.ac.id.project;
 
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +9,13 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 public class CustomAdapter extends BaseAdapter {
     Context context;
     int logo[];
     String[] bankNames;
     LayoutInflater inflter;
+
 
     public CustomAdapter(Context applicationContext, int[] logo, String[] bankNames) {
         this.context = applicationContext;
@@ -20,6 +23,7 @@ public class CustomAdapter extends BaseAdapter {
         this.bankNames = bankNames;
         inflter = (LayoutInflater.from(applicationContext));
     }
+
 
     @Override
     public int getCount() {
@@ -35,6 +39,7 @@ public class CustomAdapter extends BaseAdapter {
     public long getItemId(int i) {
         return 0;
     }
+
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
