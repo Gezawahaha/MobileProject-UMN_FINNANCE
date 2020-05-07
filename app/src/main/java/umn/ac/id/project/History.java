@@ -19,12 +19,16 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class History extends AppCompatActivity {
     private RecyclerView rView;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
     private FirestoreRecyclerAdapter adapter;
+    Locale localeID;
 
 
     @Override
@@ -39,6 +43,8 @@ public class History extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
         userId = fAuth.getUid();
         rView = findViewById(R.id.list);
+        localeID = new Locale("in", "ID");
+        final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
         //Query
         Query query = fStore.collection("Mahasiswa").document(userId)
@@ -59,9 +65,8 @@ public class History extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull HistoryViewHolder holder, int position, @NonNull HistoryModel model) {
                 holder.list_name.setText(model.getName());
-                holder.list_price.setText(model.getPrice() + "");
+                holder.list_price.setText(formatRupiah.format(model.getPrice()));
                 holder.list_date.setText(model.getTanggal());
-
             }
         };
         //ViewModel

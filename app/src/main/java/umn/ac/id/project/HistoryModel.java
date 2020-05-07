@@ -2,12 +2,12 @@ package umn.ac.id.project;
 
 public class HistoryModel {
     private String name;
-    private long price;
+    private int price;
     private String tanggal;
 
     public HistoryModel(){}
 
-    public HistoryModel(String name, long price, String date){
+    public HistoryModel(String name, int price, String date){
         this.name = name;
         this.price = price;
         this.tanggal = tanggal;
@@ -19,7 +19,7 @@ public class HistoryModel {
      public void setName(){
         this.name = name;
      }
-     public long getPrice(){
+     public int getPrice(){
         return price;
      }
      public void setPrice(){
