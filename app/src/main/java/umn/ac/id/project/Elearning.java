@@ -18,7 +18,7 @@ public class Elearning extends AppCompatActivity {
         myWebView = (WebView)findViewById(R.id.webView);
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        myWebView.loadUrl("https://elearning.umn.ac.id");
+        myWebView.loadUrl("https://elearning.umn.ac.id/my");
         myWebView.setWebViewClient(new WebViewClient());
 
     }

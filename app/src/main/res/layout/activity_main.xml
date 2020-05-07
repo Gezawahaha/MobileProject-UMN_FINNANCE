@@ -371,7 +371,7 @@
             android:layout_width="20sp"
             android:layout_height="20sp"
             android:layout_gravity="center"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="75dp"
             android:layout_marginRight="90dp"
             android:background="@drawable/home" />
 
