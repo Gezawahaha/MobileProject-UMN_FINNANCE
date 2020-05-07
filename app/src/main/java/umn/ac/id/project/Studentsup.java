@@ -41,7 +41,7 @@ public class Studentsup extends AppCompatActivity {
     }
 
     public void email(View view) {
-        
+
 
         Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                 "mailto","student.support@umn.ac.id", null)); // only email apps should handle this

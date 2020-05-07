@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -116,9 +117,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void Email(View view) {
-        Intent intent = new Intent(this, email.class);
-        startActivity(intent);
+    public void Email(View v) {
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.google.android.e-mail");
+        if (launchIntent != null) {
+            startActivity(launchIntent);
+        } else {
+            Toast.makeText(MainActivity.this, "There is no package available in android", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void History(View view) {
