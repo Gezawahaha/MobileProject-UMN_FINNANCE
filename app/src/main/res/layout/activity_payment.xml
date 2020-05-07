@@ -47,20 +47,72 @@
             android:layout_marginTop="150dp"
             android:padding="25dp">
 
-            <ImageView
-                android:id="@+id/gambarHasil"
+            <TextView
+                android:id="@+id/kurangbayar"
                 android:layout_width="wrap_content"
-                android:layout_height="305dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/coolveticarg"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:src="@drawable/add"/>
+                android:textSize="20dp"
+                android:textColor="@color/colorBlack"
+                android:text="Tagihan : -"/>
+
+            <TextView
+                android:id="@+id/duedate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/coolveticarg"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/colorBlack"
+                android:text="Tenggat Waktu : -"/>
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unggah Bukti Pembayaran"
+                android:fontFamily="@font/coolveticarg"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/colorBlack"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/shape_rounded"
+                android:orientation="vertical">
+                <Button
+                    android:background="@drawable/addimg"
+                    android:id="@+id/btnAdd"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="300dp"
+                    android:layout_marginTop="250dp"/>
+                <ImageView
+                    android:id="@+id/gambarHasil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:layout_gravity="center"/>
+            </RelativeLayout>
+            <ProgressBar
+                android:layout_marginTop="30dp"
+                android:id="@+id/loading"
+                style="@style/Widget.AppCompat.ActionBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
             <Button
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="130dp"
+                android:background="@drawable/shape_rounded"
+                android:id="@+id/btnSubmit"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SUBMIT"/>
-
+                android:text="SUBMIT"
+                android:visibility="visible"/>
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>
