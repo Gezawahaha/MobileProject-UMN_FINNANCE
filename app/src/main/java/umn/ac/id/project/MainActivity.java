@@ -139,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
     public void Elearning(View view) {
         Intent intent = new Intent(this, Elearning.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     public void sendOnChannel1(View v) {
