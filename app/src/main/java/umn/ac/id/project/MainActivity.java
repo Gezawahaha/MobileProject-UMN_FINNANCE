@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -118,12 +120,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Email(View v) {
-        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.google.android.e-mail");
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.google.android.gm");
         if (launchIntent != null) {
             startActivity(launchIntent);
         } else {
             Toast.makeText(MainActivity.this, "There is no package available in android", Toast.LENGTH_LONG).show();
         }
+        /*Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_CHOOSER);
+        String url = "https://play.google.com/store/apps/details?id=com.google.android.gm/open";
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+
+        Intent shareIntent = Intent.createChooser(i, "e-mail");
+        startActivity(shareIntent);*/
+
     }
 
     public void History(View view) {
@@ -142,17 +153,27 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
+
+
     public void sendOnChannel1(View v) {
+
+
         String title = ("Jatuh Tempo");
         String message = ("Blablalbalbal");
+        Intent intent = new Intent(this, Notification.class);
+        intent.putExtra("id", CHANNEL_1_ID)
+                .putExtra("title", title)
+                .putExtra("subject", "bayaran anda terverif");
 
-
+        PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
 
         android.app.Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
-                .setSmallIcon(R.drawable.ic_one)
+                .setSmallIcon(R.drawable.umnclic)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentIntent(pIntent)
                 .build();
 
         notificationManager.notify(1, notification);
